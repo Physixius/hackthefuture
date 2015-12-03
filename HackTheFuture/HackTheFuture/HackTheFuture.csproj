@@ -69,10 +69,10 @@
     <Compile Include="DetailWindow.xaml.cs">
       <DependentUpon>DetailWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PeopleDataSet.Designer.cs">
+    <Compile Include="PeopleDedicatedDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PeopleDataSet.xsd</DependentUpon>
+      <DependentUpon>PeopleDedicatedDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ZoekWindow.xaml.cs">
       <DependentUpon>ZoekWindow.xaml</DependentUpon>
@@ -117,16 +117,16 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="PeopleDataSet.xsc">
-      <DependentUpon>PeopleDataSet.xsd</DependentUpon>
+    <None Include="PeopleDedicatedDataSet.xsc">
+      <DependentUpon>PeopleDedicatedDataSet.xsd</DependentUpon>
     </None>
-    <None Include="PeopleDataSet.xsd">
+    <None Include="PeopleDedicatedDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PeopleDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>PeopleDedicatedDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PeopleDataSet.xss">
-      <DependentUpon>PeopleDataSet.xsd</DependentUpon>
+    <None Include="PeopleDedicatedDataSet.xss">
+      <DependentUpon>PeopleDedicatedDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

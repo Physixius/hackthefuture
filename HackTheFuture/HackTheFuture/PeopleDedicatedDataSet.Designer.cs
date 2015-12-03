@@ -20,9 +20,9 @@ namespace HackTheFuture {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("PeopleDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("PeopleDedicatedDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class PeopleDataSet : global::System.Data.DataSet {
+    public partial class PeopleDedicatedDataSet : global::System.Data.DataSet {
         
         private PeopleDataTable tablePeople;
         
@@ -30,7 +30,7 @@ namespace HackTheFuture {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public PeopleDataSet() {
+        public PeopleDedicatedDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace HackTheFuture {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected PeopleDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected PeopleDedicatedDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace HackTheFuture {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            PeopleDataSet cln = ((PeopleDataSet)(base.Clone()));
+            PeopleDedicatedDataSet cln = ((PeopleDedicatedDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace HackTheFuture {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "PeopleDataSet";
+            this.DataSetName = "PeopleDedicatedDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/PeopleDataSet.xsd";
+            this.Namespace = "http://tempuri.org/PeopleDedicatedDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablePeople = new PeopleDataTable();
@@ -225,7 +225,7 @@ namespace HackTheFuture {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            PeopleDataSet ds = new PeopleDataSet();
+            PeopleDedicatedDataSet ds = new PeopleDedicatedDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -302,6 +302,10 @@ namespace HackTheFuture {
             private global::System.Data.DataColumn columnAgility;
             
             private global::System.Data.DataColumn columnLuck;
+            
+            private global::System.Data.DataColumn columnJob;
+            
+            private global::System.Data.DataColumn columnPartner;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -434,6 +438,22 @@ namespace HackTheFuture {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JobColumn {
+                get {
+                    return this.columnJob;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PartnerColumn {
+                get {
+                    return this.columnPartner;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -469,7 +489,7 @@ namespace HackTheFuture {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PeopleRow AddPeopleRow(System.Guid Id, string FirstName, string LastName, System.DateTime DateOfBirth, int Sex, byte Strength, byte Perception, byte Endurance, byte Charisma, byte Intelligence, byte Agility, byte Luck) {
+            public PeopleRow AddPeopleRow(System.Guid Id, string FirstName, string LastName, System.DateTime DateOfBirth, int Sex, byte Strength, byte Perception, byte Endurance, byte Charisma, byte Intelligence, byte Agility, byte Luck, byte Job, string Partner) {
                 PeopleRow rowPeopleRow = ((PeopleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -483,7 +503,9 @@ namespace HackTheFuture {
                         Charisma,
                         Intelligence,
                         Agility,
-                        Luck};
+                        Luck,
+                        Job,
+                        Partner};
                 rowPeopleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPeopleRow);
                 return rowPeopleRow;
@@ -525,6 +547,8 @@ namespace HackTheFuture {
                 this.columnIntelligence = base.Columns["Intelligence"];
                 this.columnAgility = base.Columns["Agility"];
                 this.columnLuck = base.Columns["Luck"];
+                this.columnJob = base.Columns["Job"];
+                this.columnPartner = base.Columns["Partner"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,6 +578,10 @@ namespace HackTheFuture {
                 base.Columns.Add(this.columnAgility);
                 this.columnLuck = new global::System.Data.DataColumn("Luck", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLuck);
+                this.columnJob = new global::System.Data.DataColumn("Job", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJob);
+                this.columnPartner = new global::System.Data.DataColumn("Partner", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartner);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
@@ -569,6 +597,7 @@ namespace HackTheFuture {
                 this.columnIntelligence.AllowDBNull = false;
                 this.columnAgility.AllowDBNull = false;
                 this.columnLuck.AllowDBNull = false;
+                this.columnPartner.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -636,7 +665,7 @@ namespace HackTheFuture {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PeopleDataSet ds = new PeopleDataSet();
+                PeopleDedicatedDataSet ds = new PeopleDedicatedDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -853,6 +882,38 @@ namespace HackTheFuture {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte Job {
+                get {
+                    try {
+                        return ((byte)(this[this.tablePeople.JobColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Job\' in table \'People\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePeople.JobColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Partner {
+                get {
+                    try {
+                        return ((string)(this[this.tablePeople.PartnerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Partner\' in table \'People\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePeople.PartnerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFirstNameNull() {
                 return this.IsNull(this.tablePeople.FirstNameColumn);
             }
@@ -873,6 +934,30 @@ namespace HackTheFuture {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLastNameNull() {
                 this[this.tablePeople.LastNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsJobNull() {
+                return this.IsNull(this.tablePeople.JobColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetJobNull() {
+                this[this.tablePeople.JobColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPartnerNull() {
+                return this.IsNull(this.tablePeople.PartnerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPartnerNull() {
+                this[this.tablePeople.PartnerColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -911,7 +996,7 @@ namespace HackTheFuture {
         }
     }
 }
-namespace HackTheFuture.PeopleDataSetTableAdapters {
+namespace HackTheFuture.PeopleDedicatedDataSetTableAdapters {
     
     
     /// <summary>
@@ -1047,10 +1132,12 @@ namespace HackTheFuture.PeopleDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Intelligence", "Intelligence");
             tableMapping.ColumnMappings.Add("Agility", "Agility");
             tableMapping.ColumnMappings.Add("Luck", "Luck");
+            tableMapping.ColumnMappings.Add("Job", "Job");
+            tableMapping.ColumnMappings.Add("Partner", "Partner");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[People] WHERE (([Id] = @Original_Id) AND ([DateOfBirth] = @Original_DateOfBirth) AND ([Sex] = @Original_Sex) AND ([Strength] = @Original_Strength) AND ([Perception] = @Original_Perception) AND ([Endurance] = @Original_Endurance) AND ([Charisma] = @Original_Charisma) AND ([Intelligence] = @Original_Intelligence) AND ([Agility] = @Original_Agility) AND ([Luck] = @Original_Luck))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[People] WHERE (([Id] = @Original_Id) AND ([DateOfBirth] = @Original_DateOfBirth) AND ([Sex] = @Original_Sex) AND ([Strength] = @Original_Strength) AND ([Perception] = @Original_Perception) AND ([Endurance] = @Original_Endurance) AND ([Charisma] = @Original_Charisma) AND ([Intelligence] = @Original_Intelligence) AND ([Agility] = @Original_Agility) AND ([Luck] = @Original_Luck) AND ((@IsNull_Job = 1 AND [Job] IS NULL) OR ([Job] = @Original_Job)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateOfBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfBirth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1062,10 +1149,12 @@ namespace HackTheFuture.PeopleDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intelligence", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intelligence", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Agility", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Agility", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Luck", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Luck", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Job", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Job", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Job", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Job", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[People] ([Id], [FirstName], [LastName], [DateOfBirth], [Sex], [Strength], [Perception], [Endurance], [Charisma], [Intelligence], [Agility], [Luck]) VALUES (@Id, @FirstName, @LastName, @DateOfBirth, @Sex, @Strength, @Perception, @Endurance, @Charisma, @Intelligence, @Agility, @Luck);
-SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Endurance, Charisma, Intelligence, Agility, Luck FROM People WHERE (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[People] ([Id], [FirstName], [LastName], [DateOfBirth], [Sex], [Strength], [Perception], [Endurance], [Charisma], [Intelligence], [Agility], [Luck], [Job], [Partner]) VALUES (@Id, @FirstName, @LastName, @DateOfBirth, @Sex, @Strength, @Perception, @Endurance, @Charisma, @Intelligence, @Agility, @Luck, @Job, @Partner);
+SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Endurance, Charisma, Intelligence, Agility, Luck, Job, Partner FROM People WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1079,10 +1168,12 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intelligence", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intelligence", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Agility", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Agility", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Luck", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Luck", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Job", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Job", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Partner", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Partner", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[People] SET [Id] = @Id, [FirstName] = @FirstName, [LastName] = @LastName, [DateOfBirth] = @DateOfBirth, [Sex] = @Sex, [Strength] = @Strength, [Perception] = @Perception, [Endurance] = @Endurance, [Charisma] = @Charisma, [Intelligence] = @Intelligence, [Agility] = @Agility, [Luck] = @Luck WHERE (([Id] = @Original_Id) AND ([DateOfBirth] = @Original_DateOfBirth) AND ([Sex] = @Original_Sex) AND ([Strength] = @Original_Strength) AND ([Perception] = @Original_Perception) AND ([Endurance] = @Original_Endurance) AND ([Charisma] = @Original_Charisma) AND ([Intelligence] = @Original_Intelligence) AND ([Agility] = @Original_Agility) AND ([Luck] = @Original_Luck));
-SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Endurance, Charisma, Intelligence, Agility, Luck FROM People WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[People] SET [Id] = @Id, [FirstName] = @FirstName, [LastName] = @LastName, [DateOfBirth] = @DateOfBirth, [Sex] = @Sex, [Strength] = @Strength, [Perception] = @Perception, [Endurance] = @Endurance, [Charisma] = @Charisma, [Intelligence] = @Intelligence, [Agility] = @Agility, [Luck] = @Luck, [Job] = @Job, [Partner] = @Partner WHERE (([Id] = @Original_Id) AND ([DateOfBirth] = @Original_DateOfBirth) AND ([Sex] = @Original_Sex) AND ([Strength] = @Original_Strength) AND ([Perception] = @Original_Perception) AND ([Endurance] = @Original_Endurance) AND ([Charisma] = @Original_Charisma) AND ([Intelligence] = @Original_Intelligence) AND ([Agility] = @Original_Agility) AND ([Luck] = @Original_Luck) AND ((@IsNull_Job = 1 AND [Job] IS NULL) OR ([Job] = @Original_Job)));
+SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Endurance, Charisma, Intelligence, Agility, Luck, Job, Partner FROM People WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1096,6 +1187,8 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intelligence", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intelligence", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Agility", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Agility", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Luck", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Luck", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Job", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Job", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Partner", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Partner", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateOfBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateOfBirth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sex", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sex", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1106,13 +1199,15 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intelligence", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intelligence", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Agility", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Agility", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Luck", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Luck", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Job", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Job", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Job", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Job", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::HackTheFuture.Properties.Settings.Default.PeopleConnectionString;
+            this._connection.ConnectionString = global::HackTheFuture.Properties.Settings.Default.PeopleDedicatedConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1122,7 +1217,7 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Endurance" +
-                ", Charisma, Intelligence, Agility, Luck FROM dbo.People";
+                ", Charisma, Intelligence, Agility, Luck, Job, Partner FROM dbo.People";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1130,7 +1225,7 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PeopleDataSet.PeopleDataTable dataTable) {
+        public virtual int Fill(PeopleDedicatedDataSet.PeopleDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1143,9 +1238,9 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PeopleDataSet.PeopleDataTable GetData() {
+        public virtual PeopleDedicatedDataSet.PeopleDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PeopleDataSet.PeopleDataTable dataTable = new PeopleDataSet.PeopleDataTable();
+            PeopleDedicatedDataSet.PeopleDataTable dataTable = new PeopleDedicatedDataSet.PeopleDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1153,14 +1248,14 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PeopleDataSet.PeopleDataTable dataTable) {
+        public virtual int Update(PeopleDedicatedDataSet.PeopleDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PeopleDataSet dataSet) {
+        public virtual int Update(PeopleDedicatedDataSet dataSet) {
             return this.Adapter.Update(dataSet, "People");
         }
         
@@ -1183,7 +1278,7 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(System.Guid Original_Id, System.DateTime Original_DateOfBirth, int Original_Sex, byte Original_Strength, byte Original_Perception, byte Original_Endurance, byte Original_Charisma, byte Original_Intelligence, byte Original_Agility, byte Original_Luck) {
+        public virtual int Delete(System.Guid Original_Id, System.DateTime Original_DateOfBirth, int Original_Sex, byte Original_Strength, byte Original_Perception, byte Original_Endurance, byte Original_Charisma, byte Original_Intelligence, byte Original_Agility, byte Original_Luck, global::System.Nullable<byte> Original_Job) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((System.Guid)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_DateOfBirth));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Sex));
@@ -1194,6 +1289,14 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
             this.Adapter.DeleteCommand.Parameters[7].Value = ((byte)(Original_Intelligence));
             this.Adapter.DeleteCommand.Parameters[8].Value = ((byte)(Original_Agility));
             this.Adapter.DeleteCommand.Parameters[9].Value = ((byte)(Original_Luck));
+            if ((Original_Job.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((byte)(Original_Job.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1214,7 +1317,7 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.Guid Id, string FirstName, string LastName, System.DateTime DateOfBirth, int Sex, byte Strength, byte Perception, byte Endurance, byte Charisma, byte Intelligence, byte Agility, byte Luck) {
+        public virtual int Insert(System.Guid Id, string FirstName, string LastName, System.DateTime DateOfBirth, int Sex, byte Strength, byte Perception, byte Endurance, byte Charisma, byte Intelligence, byte Agility, byte Luck, global::System.Nullable<byte> Job, string Partner) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(Id));
             if ((FirstName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1237,6 +1340,18 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
             this.Adapter.InsertCommand.Parameters[9].Value = ((byte)(Intelligence));
             this.Adapter.InsertCommand.Parameters[10].Value = ((byte)(Agility));
             this.Adapter.InsertCommand.Parameters[11].Value = ((byte)(Luck));
+            if ((Job.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((byte)(Job.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Partner == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Partner));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1270,6 +1385,8 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
                     byte Intelligence, 
                     byte Agility, 
                     byte Luck, 
+                    global::System.Nullable<byte> Job, 
+                    string Partner, 
                     System.Guid Original_Id, 
                     System.DateTime Original_DateOfBirth, 
                     int Original_Sex, 
@@ -1279,7 +1396,8 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
                     byte Original_Charisma, 
                     byte Original_Intelligence, 
                     byte Original_Agility, 
-                    byte Original_Luck) {
+                    byte Original_Luck, 
+                    global::System.Nullable<byte> Original_Job) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.Guid)(Id));
             if ((FirstName == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1302,16 +1420,36 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
             this.Adapter.UpdateCommand.Parameters[9].Value = ((byte)(Intelligence));
             this.Adapter.UpdateCommand.Parameters[10].Value = ((byte)(Agility));
             this.Adapter.UpdateCommand.Parameters[11].Value = ((byte)(Luck));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.Guid)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_DateOfBirth));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Sex));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((byte)(Original_Strength));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((byte)(Original_Perception));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((byte)(Original_Endurance));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((byte)(Original_Charisma));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((byte)(Original_Intelligence));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((byte)(Original_Agility));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((byte)(Original_Luck));
+            if ((Job.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((byte)(Job.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Partner == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Partner));
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.Guid)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_DateOfBirth));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Sex));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((byte)(Original_Strength));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((byte)(Original_Perception));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((byte)(Original_Endurance));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((byte)(Original_Charisma));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((byte)(Original_Intelligence));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((byte)(Original_Agility));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((byte)(Original_Luck));
+            if ((Original_Job.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((byte)(Original_Job.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1344,6 +1482,8 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
                     byte Intelligence, 
                     byte Agility, 
                     byte Luck, 
+                    global::System.Nullable<byte> Job, 
+                    string Partner, 
                     System.Guid Original_Id, 
                     System.DateTime Original_DateOfBirth, 
                     int Original_Sex, 
@@ -1353,8 +1493,9 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
                     byte Original_Charisma, 
                     byte Original_Intelligence, 
                     byte Original_Agility, 
-                    byte Original_Luck) {
-            return this.Update(Original_Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Endurance, Charisma, Intelligence, Agility, Luck, Original_Id, Original_DateOfBirth, Original_Sex, Original_Strength, Original_Perception, Original_Endurance, Original_Charisma, Original_Intelligence, Original_Agility, Original_Luck);
+                    byte Original_Luck, 
+                    global::System.Nullable<byte> Original_Job) {
+            return this.Update(Original_Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Endurance, Charisma, Intelligence, Agility, Luck, Job, Partner, Original_Id, Original_DateOfBirth, Original_Sex, Original_Strength, Original_Perception, Original_Endurance, Original_Charisma, Original_Intelligence, Original_Agility, Original_Luck, Original_Job);
         }
     }
     
@@ -1449,7 +1590,7 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(PeopleDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(PeopleDedicatedDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._peopleTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.People.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1468,7 +1609,7 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(PeopleDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(PeopleDedicatedDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._peopleTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.People.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1486,7 +1627,7 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(PeopleDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(PeopleDedicatedDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._peopleTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.People.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1528,7 +1669,7 @@ SELECT Id, FirstName, LastName, DateOfBirth, Sex, Strength, Perception, Enduranc
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(PeopleDataSet dataSet) {
+        public virtual int UpdateAll(PeopleDedicatedDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

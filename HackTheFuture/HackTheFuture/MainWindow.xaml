@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="708.14" Width="929.264" Loaded="Window_Loaded">
     <Window.Resources>
-        <local:PeopleDataSet x:Key="peopleDataSet"/>
-        <CollectionViewSource x:Key="peopleViewSource" Source="{Binding People, Source={StaticResource peopleDataSet}}"/>
+        <local:PeopleDedicatedDataSet x:Key="peopleDedicatedDataSet"/>
+        <CollectionViewSource x:Key="peopleViewSource" Source="{Binding People, Source={StaticResource peopleDedicatedDataSet}}"/>
     </Window.Resources>
-    <Grid DataContext="{StaticResource peopleViewSource}" Margin="0,0,0,3">
+    <Grid Margin="0,0,0,3" DataContext="{StaticResource peopleViewSource}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="266*"/>
             <ColumnDefinition Width="54*"/>
@@ -18,8 +18,9 @@
         </Grid.ColumnDefinitions>
         <Button x:Name="EditButton" Content="Edit" HorizontalAlignment="Left" Margin="114,32,0,0" VerticalAlignment="Top" Width="75" Click="EditButton_Click"/>
         <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="75" Click="SearchButton_Click"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="347" Width="890" ItemsSource="{Binding}"/>
         <Button x:Name="JobButton" Grid.ColumnSpan="2" Content="Give Jobs" HorizontalAlignment="Left" Margin="235,32,0,0" VerticalAlignment="Top" Width="75" Click="JobButton_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="99,107,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="280" Width="768" ItemsSource="{Binding}"/>
 
     </Grid>
 </Window>

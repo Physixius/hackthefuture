@@ -24,15 +24,14 @@ namespace HackTheFuture
         {
             InitializeComponent();
         }
-        HackTheFuture.PeopleDataSet peopleDataSet;
+        HackTheFuture.PeopleDedicatedDataSet peopleDedicatedDataSet;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
-            peopleDataSet = ((HackTheFuture.PeopleDataSet)(this.FindResource("peopleDataSet")));
+            peopleDedicatedDataSet = ((HackTheFuture.PeopleDedicatedDataSet)(this.FindResource("peopleDedicatedDataSet")));
             // Load data into the table People. You can modify this code as needed.
-            HackTheFuture.PeopleDataSetTableAdapters.PeopleTableAdapter peopleDataSetPeopleTableAdapter = new HackTheFuture.PeopleDataSetTableAdapters.PeopleTableAdapter();
-            peopleDataSetPeopleTableAdapter.Fill(peopleDataSet.People);
+            HackTheFuture.PeopleDedicatedDataSetTableAdapters.PeopleTableAdapter peopleDedicatedDataSetPeopleTableAdapter = new HackTheFuture.PeopleDedicatedDataSetTableAdapters.PeopleTableAdapter();
+            peopleDedicatedDataSetPeopleTableAdapter.Fill(peopleDedicatedDataSet.People);
             System.Windows.Data.CollectionViewSource peopleViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("peopleViewSource")));
             peopleViewSource.View.MoveCurrentToFirst();
         }
@@ -54,6 +53,11 @@ namespace HackTheFuture
 
         private void FindJobs()
         {
+            for(int i = 0; i<100; i++)
+            {
+                //peopleDataSet.Tables[0].Rows[i][0] = "";
+
+            }
             
         }
     }
