@@ -24,5 +24,26 @@ namespace HackTheFuture
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            HackTheFuture.PeopleDataSet peopleDataSet = ((HackTheFuture.PeopleDataSet)(this.FindResource("peopleDataSet")));
+            // Load data into the table People. You can modify this code as needed.
+            HackTheFuture.PeopleDataSetTableAdapters.PeopleTableAdapter peopleDataSetPeopleTableAdapter = new HackTheFuture.PeopleDataSetTableAdapters.PeopleTableAdapter();
+            peopleDataSetPeopleTableAdapter.Fill(peopleDataSet.People);
+            System.Windows.Data.CollectionViewSource peopleViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("peopleViewSource")));
+            peopleViewSource.View.MoveCurrentToFirst();
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

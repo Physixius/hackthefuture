@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HackTheFuture"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="708.14" Width="929.264" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:PeopleDataSet x:Key="peopleDataSet"/>
+        <CollectionViewSource x:Key="peopleViewSource" Source="{Binding People, Source={StaticResource peopleDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource peopleViewSource}" Margin="0,0,0,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="266*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="601*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="7,104,0,0" VerticalAlignment="Top" Height="465" Width="901" ItemsSource="{Binding}" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.516"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-1.348"/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
+        <Button x:Name="EditButton" Content="Edit" HorizontalAlignment="Left" Margin="114,32,0,0" VerticalAlignment="Top" Width="75" Click="EditButton_Click"/>
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="75" Click="SearchButton_Click"/>
+
     </Grid>
 </Window>

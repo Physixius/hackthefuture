@@ -66,6 +66,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DetailWindow.xaml.cs">
+      <DependentUpon>DetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZoekWindow.xaml.cs">
+      <DependentUpon>ZoekWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,25 +88,16 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ZoekWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OriginalPeopleContext.Context.cs">
+    <Compile Include="PeopleDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OriginalPeopleContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OriginalPeopleContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OriginalPeopleContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OriginalPeopleContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OriginalPeopleContext.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="People.cs">
-      <DependentUpon>OriginalPeopleContext.tt</DependentUpon>
+      <DependentUpon>PeopleDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -115,14 +116,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="OriginalPeopleContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OriginalPeopleContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="OriginalPeopleContext.edmx.diagram">
-      <DependentUpon>OriginalPeopleContext.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <None Include="PeopleDataSet.xsc">
+      <DependentUpon>PeopleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PeopleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PeopleDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PeopleDataSet.xss">
+      <DependentUpon>PeopleDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,18 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="OriginalPeopleContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OriginalPeopleContext.edmx</DependentUpon>
-      <LastGenOutput>OriginalPeopleContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="OriginalPeopleContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OriginalPeopleContext.edmx</DependentUpon>
-      <LastGenOutput>OriginalPeopleContext.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
