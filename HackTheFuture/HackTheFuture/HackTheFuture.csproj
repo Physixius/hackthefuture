@@ -69,6 +69,11 @@
     <Compile Include="DetailWindow.xaml.cs">
       <DependentUpon>DetailWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PeopleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeopleDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ZoekWindow.xaml.cs">
       <DependentUpon>ZoekWindow.xaml</DependentUpon>
     </Compile>
@@ -94,11 +99,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PeopleDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PeopleDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

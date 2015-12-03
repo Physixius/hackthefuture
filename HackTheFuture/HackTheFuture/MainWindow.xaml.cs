@@ -24,11 +24,12 @@ namespace HackTheFuture
         {
             InitializeComponent();
         }
+        HackTheFuture.PeopleDataSet peopleDataSet;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-            HackTheFuture.PeopleDataSet peopleDataSet = ((HackTheFuture.PeopleDataSet)(this.FindResource("peopleDataSet")));
+            
+            peopleDataSet = ((HackTheFuture.PeopleDataSet)(this.FindResource("peopleDataSet")));
             // Load data into the table People. You can modify this code as needed.
             HackTheFuture.PeopleDataSetTableAdapters.PeopleTableAdapter peopleDataSetPeopleTableAdapter = new HackTheFuture.PeopleDataSetTableAdapters.PeopleTableAdapter();
             peopleDataSetPeopleTableAdapter.Fill(peopleDataSet.People);
@@ -44,6 +45,16 @@ namespace HackTheFuture
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void JobButton_Click(object sender, RoutedEventArgs e)
+        {
+            FindJobs();
+        }
+
+        private void FindJobs()
+        {
+            
         }
     }
 }

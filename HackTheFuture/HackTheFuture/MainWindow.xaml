@@ -16,18 +16,10 @@
             <ColumnDefinition Width="54*"/>
             <ColumnDefinition Width="601*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="7,104,0,0" VerticalAlignment="Top" Height="465" Width="901" ItemsSource="{Binding}" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5">
-            <DataGrid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="-0.516"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="-1.348"/>
-                </TransformGroup>
-            </DataGrid.RenderTransform>
-        </DataGrid>
         <Button x:Name="EditButton" Content="Edit" HorizontalAlignment="Left" Margin="114,32,0,0" VerticalAlignment="Top" Width="75" Click="EditButton_Click"/>
         <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="75" Click="SearchButton_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="347" Width="890" ItemsSource="{Binding}"/>
+        <Button x:Name="JobButton" Grid.ColumnSpan="2" Content="Give Jobs" HorizontalAlignment="Left" Margin="235,32,0,0" VerticalAlignment="Top" Width="75" Click="JobButton_Click"/>
 
     </Grid>
 </Window>
