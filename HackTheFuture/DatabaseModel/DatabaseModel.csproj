@@ -70,6 +70,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PeopleDatabase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PeopleDatabase.Views.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
