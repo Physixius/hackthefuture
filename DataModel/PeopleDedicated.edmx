@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PeopleDedicatedModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PeopleDedicated">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+          <Property Name="Sex" Type="int" Nullable="false" />
+          <Property Name="Strength" Type="tinyint" Nullable="false" />
+          <Property Name="Perception" Type="tinyint" Nullable="false" />
+          <Property Name="Endurance" Type="tinyint" Nullable="false" />
+          <Property Name="Charisma" Type="tinyint" Nullable="false" />
+          <Property Name="Intelligence" Type="tinyint" Nullable="false" />
+          <Property Name="Agility" Type="tinyint" Nullable="false" />
+          <Property Name="Luck" Type="tinyint" Nullable="false" />
+          <Property Name="Job" Type="tinyint" />
+          <Property Name="Partner" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_PeopleDedicated_PeopleDedicated">
+          <End Role="PeopleDedicated" Type="Self.PeopleDedicated" Multiplicity="1" />
+          <End Role="PeopleDedicated1" Type="Self.PeopleDedicated" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PeopleDedicated">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PeopleDedicated1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PeopleDedicatedModelStoreContainer">
+          <EntitySet Name="PeopleDedicated" EntityType="Self.PeopleDedicated" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PeopleDedicated_PeopleDedicated" Association="Self.FK_PeopleDedicated_PeopleDedicated">
+            <End Role="PeopleDedicated" EntitySet="PeopleDedicated" />
+            <End Role="PeopleDedicated1" EntitySet="PeopleDedicated" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PeopleDedicatedModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PeopleDedicated">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sex" Type="Int32" Nullable="false" />
+          <Property Name="Strength" Type="Byte" Nullable="false" />
+          <Property Name="Perception" Type="Byte" Nullable="false" />
+          <Property Name="Endurance" Type="Byte" Nullable="false" />
+          <Property Name="Charisma" Type="Byte" Nullable="false" />
+          <Property Name="Intelligence" Type="Byte" Nullable="false" />
+          <Property Name="Agility" Type="Byte" Nullable="false" />
+          <Property Name="Luck" Type="Byte" Nullable="false" />
+          <Property Name="Job" Type="Byte" />
+          <Property Name="Partner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PeopleDedicated1" Relationship="Self.FK_PeopleDedicated_PeopleDedicated" FromRole="PeopleDedicated" ToRole="PeopleDedicated1" />
+          <NavigationProperty Name="PeopleDedicated2" Relationship="Self.FK_PeopleDedicated_PeopleDedicated" FromRole="PeopleDedicated1" ToRole="PeopleDedicated" />
+        </EntityType>
+        <Association Name="FK_PeopleDedicated_PeopleDedicated">
+          <End Role="PeopleDedicated" Type="Self.PeopleDedicated" Multiplicity="1" />
+          <End Role="PeopleDedicated1" Type="Self.PeopleDedicated" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PeopleDedicated">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PeopleDedicated1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PeopleDedicatedContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PeopleDedicated" EntityType="Self.PeopleDedicated" />
+          <AssociationSet Name="FK_PeopleDedicated_PeopleDedicated" Association="Self.FK_PeopleDedicated_PeopleDedicated">
+            <End Role="PeopleDedicated" EntitySet="PeopleDedicated" />
+            <End Role="PeopleDedicated1" EntitySet="PeopleDedicated" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PeopleDedicatedModelStoreContainer" CdmEntityContainer="PeopleDedicatedContext">
+          <EntitySetMapping Name="PeopleDedicated">
+            <EntityTypeMapping TypeName="PeopleDedicatedModel.PeopleDedicated">
+              <MappingFragment StoreEntitySet="PeopleDedicated">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Strength" ColumnName="Strength" />
+                <ScalarProperty Name="Perception" ColumnName="Perception" />
+                <ScalarProperty Name="Endurance" ColumnName="Endurance" />
+                <ScalarProperty Name="Charisma" ColumnName="Charisma" />
+                <ScalarProperty Name="Intelligence" ColumnName="Intelligence" />
+                <ScalarProperty Name="Agility" ColumnName="Agility" />
+                <ScalarProperty Name="Luck" ColumnName="Luck" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Partner" ColumnName="Partner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
