@@ -53,7 +53,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="People.cs">
-      <DependentUpon>PeopleDatabase.tt</DependentUpon>
+      <DependentUpon>PeopleOriginal.tt</DependentUpon>
     </Compile>
     <Compile Include="PeopleDatabase.Context.cs">
       <AutoGen>True</AutoGen>
@@ -70,6 +70,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PeopleDatabase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PeopleOriginal.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeopleOriginal.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PeopleOriginal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeopleOriginal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PeopleOriginal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeopleOriginal.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +99,13 @@
     <None Include="PeopleDatabase.edmx.diagram">
       <DependentUpon>PeopleDatabase.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="PeopleOriginal.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PeopleOriginal.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PeopleOriginal.edmx.diagram">
+      <DependentUpon>PeopleOriginal.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="PeopleDatabase.Context.tt">
@@ -95,6 +117,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PeopleDatabase.edmx</DependentUpon>
       <LastGenOutput>PeopleDatabase.cs</LastGenOutput>
+    </Content>
+    <Content Include="PeopleOriginal.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PeopleOriginal.edmx</DependentUpon>
+      <LastGenOutput>PeopleOriginal.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PeopleOriginal.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PeopleOriginal.edmx</DependentUpon>
+      <LastGenOutput>PeopleOriginal.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
