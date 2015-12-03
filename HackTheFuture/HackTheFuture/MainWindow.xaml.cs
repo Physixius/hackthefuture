@@ -260,18 +260,31 @@ namespace HackTheFuture
             DataRow personTwo;
             for (int i = 0; i < 1000; i++)
             {
-                for (int j = i + 1; j < 1000, j++)
+                for (int j = i + 1; j < 1000; j++)
                 {
                     personOne = peopleDedicatedDataSet.Tables[0].Rows[i];
                     personTwo = peopleDedicatedDataSet.Tables[0].Rows[j];
-                    if ((int)(byte)personOne["Partner"] == 0)
+
+
+                    if ((string)personOne["Partner"] == "0" && FindPartner(personOne, personTwo))
                     {
                         //Console.WriteLine(person.Field<byte>("Strength"));
-                        //person.SetField<int>("Job",FindJob(person));
-                        Console.WriteLine(FindPartner(personOne, personTwo));
+                        Guid temp2 = personTwo.Field<Guid>("id");
+                        Guid temp1 = personOne.Field<Guid>("id");
+                        personOne.SetField<string>("Partner",temp2.ToString());
+                        personTwo.SetField<string>("Partner",temp1.ToString());
+                        //Console.WriteLine(FindPartner(personOne, personTwo));
+                        j = 1000;
                     }
                 }
+                Console.WriteLine("i: " + i);
             }
+
+            peopleDedicatedDataSetPeopleTableAdapter.Update(peopleDedicatedDataSet.People);
+            peopleDedicatedDataSetPeopleTableAdapter.Fill(peopleDedicatedDataSet.People);
+
+            System.Windows.Data.CollectionViewSource peopleViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("peopleViewSource")));
+            peopleViewSource.View.MoveCurrentToFirst();
         }
 
         private bool FindPartner(DataRow personOne, DataRow personTwo)
