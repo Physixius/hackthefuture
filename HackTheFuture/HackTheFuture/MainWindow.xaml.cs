@@ -59,12 +59,11 @@ namespace HackTheFuture
             DataRow person;
             for (int i = 0; i < 1000; i++)
             {
-                person = peopleDedicatedDataSet.Tables[0].Rows[i];
+                person = peopleDedicatedDataSet.People.Rows[i];
                 if ((int)(byte)person["Job"] == 0)
                 {
-                    //Console.WriteLine(person.Field<byte>("Strength"));
-                    //person.SetField<int>("Job",FindJob(person));
-                    Console.WriteLine(FindJob(person));
+                    person.SetField<int>("Job",FindJob(person));
+                    //Console.WriteLine(FindJob(person));
                 }
             }
 
@@ -161,6 +160,94 @@ namespace HackTheFuture
                 luck >= 3 && luck <= 4)
             {
                 return 7;
+            }
+            //Energiedeskundige
+            else if (strength >= 0 && strength <= 2 &&
+                perception >= 2 && perception <= 4 &&
+                endurance >= 0 && endurance <= 2 &&
+                charisma >= 0 && charisma <= 2 &&
+                intelligence >= 2 && intelligence <= 3 &&
+                agility >= 1 && agility <= 3 &&
+                luck >= 1 && luck <= 3)
+            {
+                return 8;
+            }
+            //Geoloog
+            else if (strength >= 2 && strength <= 4 &&
+                perception >= 2 && perception <= 4 &&
+                endurance >= 1 && endurance <= 2 &&
+                charisma >= 0 && charisma <= 2 &&
+                intelligence >= 1 && intelligence <= 4 &&
+                agility >= 0 && agility <= 2 &&
+                luck >= 0 && luck <= 3)
+            {
+                return 9;
+            }
+            //Kaartenmaker
+            else if (strength >= 0 && strength <= 1 &&
+                perception >= 2 && perception <= 4 &&
+                endurance >= 0 && endurance <= 3 &&
+                charisma >= 0 && charisma <= 1 &&
+                intelligence >= 1 && intelligence <= 1 &&
+                agility >= 0 && agility <= 2 &&
+                luck >= 1 && luck <= 4)
+            {
+                return 10;
+            }
+            //Geschiedkundige
+            else if (strength >= 0 && strength <= 2 &&
+                perception >= 3 && perception <= 4 &&
+                endurance >= 0 && endurance <= 3 &&
+                charisma >= 0 && charisma <= 2 &&
+                intelligence >= 2 && intelligence <= 3 &&
+                agility >= 1 && agility <= 2 &&
+                luck >= 3 && luck <= 4)
+            {
+                return 11;
+            }
+            //Geheim Agent
+            else if (strength >= 1 && strength <= 4 &&
+                perception >= 3 && perception <= 4 &&
+                endurance >= 2 && endurance <= 4 &&
+                charisma >= 3 && charisma <= 4 &&
+                intelligence >= 3 && intelligence <= 4 &&
+                agility >= 3 && agility <= 4 &&
+                luck >= 3 && luck <= 4)
+            {
+                return 12;
+            }
+            //Voedingsdeskundige
+            else if (strength >= 0 && strength <= 2 &&
+                perception >= 0 && perception <= 3 &&
+                endurance >= 1 && endurance <= 4 &&
+                charisma >= 0 && charisma <= 1 &&
+                intelligence >= 1 && intelligence <= 3 &&
+                agility >= 2 && agility <= 3 &&
+                luck >= 1 && luck <= 4)
+            {
+                return 13;
+            }
+            //Afval verwerker
+            else if (strength >= 3 && strength <= 4 &&
+                perception >= 1 && perception <= 3 &&
+                endurance >= 3 && endurance <= 4 &&
+                charisma >= 0 && charisma <= 0 &&
+                intelligence >= 1 && intelligence <= 2 &&
+                agility >= 2 && agility <= 4 &&
+                luck >= 0 && luck <= 2)
+            {
+                return 14;
+            }
+            //Afval verwerker
+            else if (strength >= 3 && strength <= 4 &&
+                perception >= 1 && perception <= 3 &&
+                endurance >= 3 && endurance <= 4 &&
+                charisma >= 0 && charisma <= 0 &&
+                intelligence >= 1 && intelligence <= 2 &&
+                agility >= 2 && agility <= 4 &&
+                luck >= 0 && luck <= 2)
+            {
+                return 14;
             }
             else
             {
