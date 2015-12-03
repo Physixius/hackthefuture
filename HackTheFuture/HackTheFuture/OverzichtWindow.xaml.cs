@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace HackTheFuture
 {
     /// <summary>
-    /// Interaction logic for Overzicht.xaml
+    /// Interaction logic for OverzichtWindow.xaml
     /// </summary>
     public partial class OverzichtWindow : Window
     {
