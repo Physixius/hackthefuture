@@ -20,6 +20,7 @@
         <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="75" Click="SearchButton_Click"/>
         <Button x:Name="JobButton" Grid.ColumnSpan="2" Content="Give Jobs" HorizontalAlignment="Left" Margin="235,32,0,0" VerticalAlignment="Top" Width="75" Click="JobButton_Click"/>
         <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="280" Width="768" ItemsSource="{Binding}"/>
+        <Button x:Name="partnerButton" Content="Match Partners" Grid.Column="2" HorizontalAlignment="Left" Margin="38,32,0,0" VerticalAlignment="Top" Width="75" Click="partnerButton_Click"/>
 
     </Grid>
 </Window>

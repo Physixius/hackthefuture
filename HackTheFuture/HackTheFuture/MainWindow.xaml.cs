@@ -34,7 +34,7 @@ namespace HackTheFuture
             // Load data into the table People. You can modify this code as needed.
             peopleDedicatedDataSetPeopleTableAdapter = new HackTheFuture.PeopleDedicatedDataSetTableAdapters.PeopleTableAdapter();
             peopleDedicatedDataSetPeopleTableAdapter.Fill(peopleDedicatedDataSet.People);
-            
+
             System.Windows.Data.CollectionViewSource peopleViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("peopleViewSource")));
             peopleViewSource.View.MoveCurrentToFirst();
         }
@@ -84,10 +84,10 @@ namespace HackTheFuture
             int luck = (int)(byte)dataRow["Luck"];
 
             //OrderHandHaver
-            if (strength >=3 && strength <= 4 &&
+            if (strength >= 3 && strength <= 4 &&
                 perception >= 3 && perception <= 4 &&
                 endurance >= 2 && endurance <= 3 &&
-                charisma >= 0  && charisma <= 4 &&
+                charisma >= 0 && charisma <= 4 &&
                 intelligence >= 1 && intelligence <= 2 &&
                 agility >= 2 && agility <= 4 &&
                 luck >= 1 && luck <= 3)
@@ -252,6 +252,84 @@ namespace HackTheFuture
             {
                 return 0;
             }
+        }
+
+        private void partnerButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataRow personOne;
+            DataRow personTwo;
+            for (int i = 0; i < 1000; i++)
+            {
+                for (int j = i + 1; j < 1000, j++)
+                {
+                    personOne = peopleDedicatedDataSet.Tables[0].Rows[i];
+                    personTwo = peopleDedicatedDataSet.Tables[0].Rows[j];
+                    if ((int)(byte)personOne["Partner"] == 0)
+                    {
+                        //Console.WriteLine(person.Field<byte>("Strength"));
+                        //person.SetField<int>("Job",FindJob(person));
+                        Console.WriteLine(FindPartner(personOne, personTwo));
+                    }
+                }
+            }
+        }
+
+        private bool FindPartner(DataRow personOne, DataRow personTwo)
+        {
+            DateTime now = DateTime.Now;
+            int ageOne = now.Year - ((DateTime)personOne["DateOfBirth"]).Year;
+            int ageTwo = now.Year - ((DateTime)personTwo["DateOfBirth"]).Year;
+
+            int strengthOne = (int)(byte)personOne["Strength"];
+            int perceptionOne = (int)(byte)personOne["Perception"];
+            int enduranceOne = (int)(byte)personOne["Endurance"];
+            int charismaOne = (int)(byte)personOne["Charisma"];
+            int intelligenceOne = (int)(byte)personOne["Intelligence"];
+            int agilityOne = (int)(byte)personOne["Agility"];
+            int luckOne = (int)(byte)personOne["Luck"];
+
+
+            int strengthTwo = (int)(byte)personTwo["Strength"];
+            int perceptionTwo = (int)(byte)personTwo["Perception"];
+            int enduranceTwo = (int)(byte)personTwo["Endurance"];
+            int charismaTwo = (int)(byte)personTwo["Charisma"];
+            int intelligenceTwo = (int)(byte)personTwo["Intelligence"];
+            int agilityTwo = (int)(byte)personTwo["Agility"];
+            int luckTwo = (int)(byte)personTwo["Luck"];
+
+            int strengthResult = Math.Abs(strengthOne - strengthTwo);
+            int perceptionResult = Math.Abs(perceptionOne - perceptionTwo);
+            int enduranceResult = Math.Abs(enduranceOne - enduranceTwo);
+            int charismaResult = Math.Abs(charismaOne - charismaTwo);
+            int intelligenceResult = Math.Abs(intelligenceOne - intelligenceTwo);
+            int agilityResult = Math.Abs(agilityOne - agilityTwo);
+            int luckResult = Math.Abs(luckOne - luckTwo);
+
+            int ageResult = Math.Abs(ageOne - ageTwo);
+
+
+
+            if (personOne["Sex"] != personTwo["Sex"]
+                && ageResult <= 6
+                && personOne["LastName"] != personTwo["LastName"]
+                && strengthResult >= 1 && strengthResult <= 3
+                 && perceptionResult >= 1 && perceptionResult <= 3
+                 && enduranceResult >= 1 && enduranceResult <= 3
+                && charismaResult >= 1 && charismaResult <= 3
+                && intelligenceResult >= 1 && intelligenceResult <= 3
+                && agilityResult >= 1 && agilityResult <= 3
+                && luckResult >= 1 && luckResult <= 3)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+
+
         }
     }
 }
