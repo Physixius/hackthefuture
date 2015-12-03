@@ -46,7 +46,6 @@ namespace HackTheFuture
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void JobButton_Click(object sender, RoutedEventArgs e)
